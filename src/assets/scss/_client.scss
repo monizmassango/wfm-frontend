@@ -1,0 +1,20 @@
+.client {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 10rem auto;
+  align-items: center;
+
+  @include respond(phone) {
+    width: 100%;
+  }
+
+  img {
+    object-fit: cover;
+    height: 100%;
+
+    @include respond(tab-port) {
+      width: 7rem;
+    }
+  }
+}

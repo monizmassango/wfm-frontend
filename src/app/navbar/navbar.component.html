@@ -1,0 +1,39 @@
+<div class="navbar__top">
+  <li class="navbar__top--item">
+    <img src="/assets/img/letter.png" alt="letter">
+    info@wfmconsultores.com
+  </li>
+  <li class="navbar__top--item">
+    <img src="/assets/img/phone.png" alt="phone">
+    +258 84 742 6835 / +258 82 633 5428
+  </li>
+</div>
+<nav class="navbar">
+  <div class="navbar__logo">
+    <img src="/assets/img/WFM.png" alt="WFM">
+  </div>
+
+  <ul class="navbar__list">
+    <li class="navbar__item" routerLinkActive="active">
+      <a routerLink="/index" class="navbar__link">Inicio</a>
+    </li>
+    <li class="navbar__item" routerLinkActive="active">
+      <a routerLink="/sobre" class="navbar__link">Empresa</a>
+    </li>
+    <li class="navbar__item" routerLinkActive="active">
+      <a (click)="scroll('servicos')" class="navbar__link">Serviços</a>
+    </li>
+    <li class="navbar__item" routerLinkActive="active">
+      <a (click)="scroll('testemunhas')" class="navbar__link">Testemunhas</a>
+    </li>
+    <li class="navbar__item" routerLinkActive="active">
+      <a (click)="scroll('posts')" class="navbar__link">Posts</a>
+    </li>
+    <li class="navbar__item" routerLinkActive="active">
+      <a routerLink="vagas" class="navbar__link">Vagas</a>
+    </li>
+    <li class="navbar__item" routerLinkActive="active">
+      <a (click)="scroll('contacto')" class="navbar__link">Contacto</a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,66 @@
+.banner {
+  display: flex;
+  justify-content: space-between;
+  transform: translateX(-4rem);
+  width: calc(100% + 8rem);
+  background-image: linear-gradient(
+      to bottom,
+      rgba($color-main, 0.6),
+      rgba($color-main, 0.6)
+    ),
+    url("/assets/img/employer.png");
+  background-position-y: 20%;
+  background-size: cover;
+  padding: 8rem;
+  color: $color-white;
+
+  &.contacto {
+    background-image: linear-gradient(
+        to bottom,
+        rgba($color-main, 0.6),
+        rgba($color-main, 0.6)
+      ),
+      url("/assets/img/candidato.jpg");
+  }
+
+  &.contact {
+    @include respond(phone) {
+      padding: 1rem;
+      transform: translateX(0);
+    }
+  }
+
+  @include respond(phone) {
+    flex-direction: column;
+  }
+
+  &.justify-center {
+    justify-content: center;
+    text-align: center;
+
+    .banner__item {
+      width: 80%;
+    }
+  }
+
+  h2 {
+    margin-bottom: 4rem;
+  }
+
+  p {
+    margin-bottom: 3rem;
+  }
+
+  &__item {
+    width: 40%;
+
+    @include respond(phone) {
+      width: 100%;
+      text-align: center;
+
+      &:first-child {
+        margin-bottom: 7rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<div class="container">
+  <span class="title--mini">Vagas</span>
+  <h2 class="title--2">Confira as oportunidades <br> de emprego</h2>
+
+  <div class="cards">
+    <div class="card" *ngFor="let vaga of vagas">
+      <span class="card__top--right"></span>
+      <span class="card__top--left"></span>
+      <span class="card__bottom--right"></span>
+      <span class="card__bottom--left"></span>
+      <h2 class="title--3" [routerLink]="['/vaga', vaga.id]">{{vaga.nomeEmpresa}}</h2>
+      <div class="card__time">
+        <img class="card__time--clock" src="/assets/img/clock.png" alt="">
+        <span>{{vaga.endDate | date: 'dd/MM/yyyy'}}</span>
+      </div>
+      <h3 class="title--4" routerLink="/vaga">{{vaga.title}}</h3>
+      <p>{{(vaga.description.length>300)? (vaga.description | slice:0:300)+'...':(vaga.description)}}</p>
+      <a href="#" class="card__readmore">Saber mais &rarr;</a>
+    </div>
+  </div>
+</div>

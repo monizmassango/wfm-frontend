@@ -1,0 +1,22 @@
+.underline {
+  display: inline-block;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -.5rem;
+    height: .1rem;
+    background-color: $color-white;
+    width: 70%;
+  }
+}
+
+.w-50 {
+  width: 48% !important;
+}
+
+.clearfix {
+  overflow: auto;
+}

@@ -1,0 +1,52 @@
+<div class="about vaga">
+  <div class="about__content">
+    <div class="about__content--picture">
+      <img [src]="image">
+      <li>
+        <span>Email</span>
+        <span>{{vaga?.email}}</span>
+      </li>
+      <li>
+        <span>Expira</span>
+        <span>{{vaga?.endDate | date: 'dd/MMM/yyyy'}}</span>
+      </li>
+    </div>
+    <div class="about__content--text">
+      <h1 class="title--3">{{vaga?.title}}</h1>
+      <span class="title--mini vaga">{{vaga?.nomeEmpresa}}</span>
+      <p>{{vaga?.description}}</p>
+      <h2 class="title--4">Requisitos</h2>
+      <li class="about__content--item"><span>></span> {{vaga?.requisitos}}</li>
+    </div>
+  </div>
+</div>
+
+<div class="banner contact">
+  <form class="contact__form" [formGroup]="candidateForm">
+    <span class="title--mini">CANDIDATAR-SE</span>
+    <h2 class="title--2">Minha candidatura</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum provident ea quisquam voluptatibus pariatur
+      incidunt? Doloribus temporibus deleniti architecto perspiciatis deserunt sed dolores voluptate minima!</p>
+
+    <div class="form__group">
+      <label class="form__label">Nome completo</label>
+      <input type="text" formControlName="name" class="form__input" placeholder="Nome">
+    </div>
+    <div class="form__flex">
+      <div class="form__group w-50">
+        <label class="form__label">Contacto</label>
+        <input type="tel" formControlName="contact" class="form__input" placeholder="+258 XXXXXXXXX">
+      </div>
+      <div class="form__group w-50">
+        <label class="form__label">Email</label>
+        <input type="email" formControlName="email" class="form__input" placeholder="exemplo@email.com">
+      </div>
+    </div>
+    <div class="form__group">
+      <label class="form__label">Curriculum</label>
+      <input type="file" (change)="onFileChange($event)" accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf"
+        class="form__input" placeholder="Carregar curriculum">
+    </div>
+    <button class="btn btn--main btn--full" (click)="onSubmit()">Enviar</button>
+  </form>
+</div>

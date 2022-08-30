@@ -1,0 +1,46 @@
+/*
+  media query mixin
+  0-600px; phone
+  600-900px tablet portrait
+  900-1200px table landscape
+  1200-1800px normal
+  1800px big desktop
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint==small {
+    @media (max-width: 20em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==phone {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tab-land {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tab-port {
+    @media (max-width: 56.2em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tab-port {
+    @media (max-width: 56.2em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==big-desktop {
+    @media (min-width: 98.75em) {
+      @content;
+    }
+  }
+}

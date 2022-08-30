@@ -1,0 +1,89 @@
+.footer {
+  margin-top: 10rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+
+  @include respond(tab-port) {
+    // flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    height: .1rem;
+    background-color: rgba($color-gray, .1);
+  }
+
+  &__location {
+    margin: 2rem;
+
+    &--logo {
+      margin-bottom: 2rem;
+    }
+
+    &--item {
+      font-size: 1.3rem;
+      margin-bottom: .5rem;
+    }
+
+    &--rights {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+  }
+
+  &__menu {
+    margin: 2rem;
+
+    &--title {
+      margin-bottom: 2rem;
+    }
+
+    &--link {
+      margin-bottom: .5rem;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__subscribe {
+    margin-top: 2rem;
+    align-self: center;
+    position: relative;
+
+    &--input {
+      input {
+        width: 50rem;
+        padding-right: 4rem;
+
+        @include respond(tab-land) {
+          width: 35rem;
+        }
+
+        @include respond(tab-port) {
+          width: 25rem;
+        }
+      }
+
+      img {
+        position: absolute;
+        right: 1rem;
+        top: 70%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}

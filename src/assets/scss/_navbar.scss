@@ -1,0 +1,71 @@
+.navbar {
+  display: flex;
+  font-size: 1.3rem;
+
+  @include respond(phone) {
+    flex-direction: column;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+    color: rgba($color-gray, 0.5);
+
+    &--item {
+      display: flex;
+      align-items: center;
+      margin-left: 5rem;
+
+      img {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__logo {
+    @include respond(phone) {
+      display: none;
+    }
+  }
+
+  &__list {
+    margin-top: 3rem;
+    margin-left: auto;
+    font-size: 1.4rem;
+    display: flex;
+
+    @include respond(phone) {
+      font-size: 1.3rem;
+    }
+  }
+
+  &__item {
+    display: block;
+    margin: 0 2rem;
+    cursor: pointer;
+
+    @include respond(phone) {
+      margin: 0 1rem;
+    }
+
+    transition: all .5s;
+
+    &.active {
+      position: relative;
+      font-weight: bold;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50%;
+        height: .1rem;
+        background-color: $color-main;
+      }
+
+    }
+  }
+}

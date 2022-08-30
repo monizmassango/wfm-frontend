@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  api: 'https://wfd-api-test.herokuapp.com'
 };

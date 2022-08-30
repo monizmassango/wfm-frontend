@@ -1,0 +1,33 @@
+.contact {
+  background-image: linear-gradient(to bottom, rgba($color-main, 0.6), rgba($color-main, 0.6)), url('/assets/img/contact.jpg');
+  position: relative;
+  padding-bottom: 0rem;
+  margin-bottom: 8rem;
+
+  &__form {
+    background-color: $color-white;
+    color: $color-gray;
+    padding: 2rem 4rem;
+    transform: translateY(-8rem);
+    width: 50vw;
+
+    @include respond (tab-port) {
+      width: 94vw;
+      padding: 2rem 1rem;
+    }
+
+    h2 {
+      margin-bottom: 2.5rem;
+    }
+
+    span {
+      text-align: start;
+      margin-top: 1rem;
+    }
+
+    p {
+      margin-bottom: 5rem;
+      color: rgba($color-gray, 0.6);
+    }
+  }
+}
