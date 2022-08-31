@@ -1,0 +1,32 @@
+<div class="banner contact">
+  <form class="contact__form" [formGroup]="cvForm">
+    <span class="title--mini">Enviar CV</span>
+    <h2 class="title--2">VAGAS - Deixe o seu CV</h2>
+    <p>Caro/a candidato/a partilhe connosco o seu Curriculum Vitae para constar da nossa base de dados e confira as
+      vagas
+      disponÍveis.</p>
+    <div class="form__group">
+      <label class="form__label">Nome completo</label>
+      <input type="text" formControlName="name" class="form__input" placeholder="Nome"
+        [ngClass]="{ 'is-invalid': submitted && f['name'].errors }">
+    </div>
+    <div class="form__flex">
+      <div class="form__group w-50">
+        <label class="form__label">Contacto</label>
+        <input type="tel" formControlName="contact" class="form__input" placeholder="+258 XXXXXXXXX"
+          [ngClass]="{ 'is-invalid': submitted && f['contact'].errors }">
+      </div>
+      <div class="form__group w-50">
+        <label class="form__label">Email</label>
+        <input type="email" formControlName="email" class="form__input" placeholder="exemplo@email.com"
+          [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+      </div>
+    </div>
+    <div class="form__group">
+      <label class="form__label">Curriculum</label>
+      <input type="file" (change)="onFileChange($event)" accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf"
+        class="form__input" placeholder="Carregar curriculum">
+    </div>
+    <button class="btn btn--main btn--full" (click)="onSubmit()">Enviar</button>
+  </form>
+</div>

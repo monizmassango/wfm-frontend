@@ -42,15 +42,15 @@
       Caro/a candidato/a partilhe connosco o seu Curriculum Vitae para constar da nossa base de dados e confira as vagas
       disponÍveis.
     </p>
-    <button class="btn btn--white">Enviar CV</button>
+    <button class="btn btn--white" routerLink="/enviar-cv">Enviar CV</button>
   </div>
 
   <div class="banner__item">
     <h2 class="title--3 underline">Disponibilize a sua vaga</h2>
     <p>Prezado/a queira fazer uso da nossa página para divulgar a sua necessidade de pessoal. Por favor disponibilize
-      abaixo a vaga de emprego, com todas especifições que pretende esclarecer aos candidatos.
+      abaixo a vaga de emprego, com todas especificações que pretende esclarecer aos candidatos.
     </p>
-    <button class="btn btn--white">Disponibilizar vaga</button>
+    <button class="btn btn--white" routerLink="/enviar-vaga">Disponibilizar vaga</button>
   </div>
 </div>
 
@@ -185,8 +185,8 @@
 </div>
 
 <div class="banner contact" id="contacto">
-  <form class="contact__form">
-    <span class="title--mini">Contacto</span>
+  <form class="contact__form" [formGroup]="contactForm">
+    <span class="title--mini">Contacto</span>u
     <h2 class="title--2">Fale connosco</h2>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum provident
@@ -196,22 +196,31 @@
 
     <div class="form__group">
       <label class="form__label">Empresa/ Entidade/ Instituição</label>
-      <input type="text" class="form__input" placeholder="Nome" />
+      <input type="text" formControlName="name" class="form__input" placeholder="Nome"
+        [ngClass]="{ 'is-invalid': submitted && f['name'].errors }" />
+    </div>
+    <div class="form__group">
+      <label class="form__label">Assunto</label>
+      <input type="text" formControlName="assunto" class="form__input" placeholder="Assunto"
+        [ngClass]="{ 'is-invalid': submitted && f['assunto'].errors }" />
     </div>
     <div class="form__flex">
       <div class="form__group w-50">
         <label class="form__label">Contacto</label>
-        <input type="tel" class="form__input" placeholder="+258 XXXXXXXXX" />
+        <input type="tel" formControlName="contact" class="form__input" placeholder="+258 XXXXXXXXX"
+          [ngClass]="{ 'is-invalid': submitted && f['contact'].errors }" />
       </div>
       <div class="form__group w-50">
         <label class="form__label">Email</label>
-        <input type="email" class="form__input" placeholder="exemplo@email.com" />
+        <input type="email" formControlName="email" class="form__input" placeholder="exemplo@email.com"
+          [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
       </div>
     </div>
     <div class="form__group">
       <label class="form__label">Mensagem</label>
-      <textarea class="form__input textarea" placeholder="mensagem"></textarea>
+      <textarea class="form__input textarea" formControlName="description" placeholder="mensagem"
+        [ngClass]="{ 'is-invalid': submitted && f['description'].errors }"></textarea>
     </div>
-    <button class="btn btn--main btn--full">Enviar mensagem</button>
+    <button class="btn btn--main btn--full" (click)="onSubmit()">Enviar mensagem</button>
   </form>
 </div>

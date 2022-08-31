@@ -23,6 +23,11 @@
     border-radius: .4rem;
     outline: none;
 
+    &.is-invalid {
+      border: .1rem solid red;
+      color: red;
+    }
+
     &.textarea {
       height: 20rem;
       resize: none;

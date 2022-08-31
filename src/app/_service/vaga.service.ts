@@ -25,6 +25,7 @@ export class VagaService {
 
   imagem(formData: FormData): Observable<any> {
     var HTTPOptions = {
+      reportProgress: true,
       responseType: 'array' as 'json',
     };
 
@@ -33,5 +34,16 @@ export class VagaService {
       formData,
       HTTPOptions
     );
+  }
+
+  cvImagem(formData: FormData): Observable<any> {
+    return this.http.post<any>(`${environment.api}/cv/image`, formData, {
+      reportProgress: true,
+      observe: 'events',
+    });
+  }
+
+  cv(data: any): Observable<any> {
+    return this.http.post<any>(`${environment.api}/cv/createOrUpdate`, data);
   }
 }
