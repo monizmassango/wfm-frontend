@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { EnviarCvComponent } from './enviar-cv/enviar-cv.component';
 import { EnviarVagaComponent } from './enviar-vaga/enviar-vaga.component';
+import { NoticiaComponent } from './noticia/noticia.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { EnviarVagaComponent } from './enviar-vaga/enviar-vaga.component';
     VagasComponent,
     VagaComponent,
     EnviarCvComponent,
-    EnviarVagaComponent
+    EnviarVagaComponent,
+    NoticiaComponent
   ],
   imports: [
     BrowserModule,

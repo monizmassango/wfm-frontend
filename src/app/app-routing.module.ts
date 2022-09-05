@@ -1,3 +1,4 @@
+import { NoticiaComponent } from './noticia/noticia.component';
 import { EnviarVagaComponent } from './enviar-vaga/enviar-vaga.component';
 import { VagaComponent } from './vaga/vaga.component';
 import { VagasComponent } from './vagas/vagas.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'sobre', component: AboutComponent },
   { path: 'vagas', component: VagasComponent },
   { path: 'vaga/:id', component: VagaComponent },
+  { path: 'noticia/:id', component: NoticiaComponent },
   { path: 'enviar-cv', component: EnviarCvComponent },
   { path: 'enviar-vaga', component: EnviarVagaComponent },
   { path: '*', redirectTo: 'index', pathMatch: 'full' },

@@ -20,4 +20,8 @@ export class NoticiaService {
       })
     );
   }
+
+  getById(ID: any): Observable<Noticia> {
+    return this.http.get<Noticia>(`${environment.api}/noticias/getByID/${ID}`);
+  }
 }

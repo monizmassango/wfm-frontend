@@ -156,7 +156,7 @@
   </h2>
 
   <div class="cards">
-    <div class="card" *ngFor="let noticia of noticias">
+    <div class="card" [routerLink]="['/noticia', noticia.id]" *ngFor="let noticia of noticias | slice:0:3">
       <span class="card__top--right"></span>
       <span class="card__top--left"></span>
       <span class="card__bottom--right"></span>
