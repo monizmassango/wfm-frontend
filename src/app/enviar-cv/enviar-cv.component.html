@@ -27,6 +27,17 @@
       <input type="file" (change)="onFileChange($event)" accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf"
         class="form__input" placeholder="Carregar curriculum">
     </div>
+
+
+    <div class="container-prog">
+      <div class="progress-bar__container">
+        <div class="progress-bar" [style.left]="(100 - progress)">
+          <span class="progress-bar__text">Uploaded Successfully!</span>
+        </div>
+      </div>
+    </div>
+
+
     <button class="btn btn--main btn--full" (click)="onSubmit()">Enviar</button>
   </form>
 </div>

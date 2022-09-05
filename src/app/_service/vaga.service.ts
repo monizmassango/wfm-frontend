@@ -43,7 +43,7 @@ export class VagaService {
     });
   }
 
-  cv(data: any): Observable<any> {
-    return this.http.post<any>(`${environment.api}/cv/createOrUpdate`, data);
+  cv(data: any) {
+    return this.http.post(`${environment.api}/cv/createOrUpdate`, data);
   }
 }

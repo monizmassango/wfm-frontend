@@ -36,8 +36,8 @@ export class VagaComponent implements OnInit {
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       contact: ['', Validators.required],
-      vagaId: [`${this.vagaId}`, Validators.required]
-    })
+      vagaId: [`${this.vagaId}`, Validators.required],
+    });
   }
 
   get f() {
@@ -51,11 +51,11 @@ export class VagaComponent implements OnInit {
   }
 
   onSubmit() {
-    const vagaCv: VagaCv = this.candidateForm.value
+    const vagaCv: VagaCv = this.candidateForm.value;
     const formData = new FormData();
-    formData.append("file", this.file);
+    formData.append('file', this.file);
     this.vagaService.imagem(formData).subscribe((blob) => {
-      this.vagaService.vagaCv(vagaCv).subscribe()
+      this.vagaService.vagaCv(vagaCv).subscribe();
     });
   }
 }
