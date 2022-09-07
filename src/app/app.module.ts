@@ -18,6 +18,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { EnviarCvComponent } from './enviar-cv/enviar-cv.component';
 import { EnviarVagaComponent } from './enviar-vaga/enviar-vaga.component';
 import { NoticiaComponent } from './noticia/noticia.component';
+import { NoticiasComponent } from './noticias/noticias.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { NoticiaComponent } from './noticia/noticia.component';
     VagaComponent,
     EnviarCvComponent,
     EnviarVagaComponent,
-    NoticiaComponent
+    NoticiaComponent,
+    NoticiasComponent
   ],
   imports: [
     BrowserModule,

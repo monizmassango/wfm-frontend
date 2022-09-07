@@ -8,6 +8,7 @@
   box-sizing: inherit;
   font-family: inherit;
   color: inherit;
+  outline: none;
 
   &:hover,
   &:active,
@@ -44,7 +45,7 @@ body {
 }
 
 .container {
-  margin: 8rem 0;
+  margin: 10rem 0;
 
   h2 {
     text-align: center;

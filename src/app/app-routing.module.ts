@@ -1,4 +1,3 @@
-import { NoticiaComponent } from './noticia/noticia.component';
 import { EnviarVagaComponent } from './enviar-vaga/enviar-vaga.component';
 import { VagaComponent } from './vaga/vaga.component';
 import { VagasComponent } from './vagas/vagas.component';
@@ -7,7 +6,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 
 import { HomeComponent } from './home/home.component';
+import { NoticiaComponent } from './noticia/noticia.component';
 import { EnviarCvComponent } from './enviar-cv/enviar-cv.component';
+import { NoticiasComponent } from './noticias/noticias.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'index', pathMatch: 'full' },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'noticia/:id', component: NoticiaComponent },
   { path: 'enviar-cv', component: EnviarCvComponent },
   { path: 'enviar-vaga', component: EnviarVagaComponent },
+  { path: 'noticias', component: NoticiasComponent },
   { path: '*', redirectTo: 'index', pathMatch: 'full' },
 ];
 

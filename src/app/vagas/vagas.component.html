@@ -3,7 +3,7 @@
   <h2 class="title--2">Confira as oportunidades <br> de emprego</h2>
 
   <div class="cards">
-    <div class="card" *ngFor="let vaga of vagas">
+    <div class="card" *ngFor="let vaga of vagas" [routerLink]="['/vaga', vaga.id]">
       <span class="card__top--right"></span>
       <span class="card__top--left"></span>
       <span class="card__bottom--right"></span>
@@ -15,7 +15,7 @@
       </div>
       <h3 class="title--4" routerLink="/vaga">{{vaga.title}}</h3>
       <p>{{(vaga.description.length>300)? (vaga.description | slice:0:300)+'...':(vaga.description)}}</p>
-      <a href="#" class="card__readmore">Saber mais &rarr;</a>
+      <a [routerLink]="['/vaga', vaga.id]" class="card__readmore">Saber mais &rarr;</a>
     </div>
   </div>
 </div>

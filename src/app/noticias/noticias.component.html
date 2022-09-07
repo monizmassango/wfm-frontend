@@ -1,0 +1,20 @@
+<div class="container">
+  <span class="title--mini">Noticias</span>
+  <h2 class="title--2">Conheça nossas últimas <br> novidades</h2>
+
+  <div class="cards">
+    <div class="card" [routerLink]="['/noticia', noticia.id]" *ngFor="let noticia of noticias">
+      <span class="card__top--right"></span>
+      <span class="card__top--left"></span>
+      <span class="card__bottom--right"></span>
+      <span class="card__bottom--left"></span>
+      <img class="card__img" [src]="'data:image/png;base64,'+noticia.image" alt="" />
+      <div class="card__time">
+        <img class="card__time--clock" src="/assets/img/clock.png" alt="" />
+        <span>Terça feira, 14:30</span>
+      </div>
+      <h3 class="title--3">{{noticia.title}}</h3>
+      <p>{{(noticia.body.length>300)? (noticia.body | slice:0:300)+'...':(noticia.body)}}</p>
+    </div>
+  </div>
+</div>
