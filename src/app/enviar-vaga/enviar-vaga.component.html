@@ -1,29 +1,54 @@
 <div class="banner contact">
-  <form class="contact__form">
-    <span class="title--mini">CANDIDATAR-SE</span>
-    <h2 class="title--2">Minha candidatura</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum provident ea quisquam voluptatibus pariatur
-      incidunt? Doloribus temporibus deleniti architecto perspiciatis deserunt sed dolores voluptate minima!</p>
+  <form class="contact__form" [formGroup]="vagasForm">
+    <span class="title--mini">Publicar vaga</span>
+    <h2 class="title--2">Disponibilize a sua vaga</h2>
+    <p>Prezado/a queira fazer uso da nossa página para divulgar a sua necessidade de pessoal. Por favor disponibilize
+      abaixo a vaga de emprego, com todas especificações que pretende esclarecer aos candidatos.</p>
 
     <div class="form__group">
-      <label class="form__label">Nome completo</label>
-      <input type="text" class="form__input" placeholder="Nome">
+      <label class="form__label">Nome da Empresa</label>
+      <input type="text" class="form__input" placeholder="Nome da empresa" formControlName="nomeEmpresa"
+        [ngClass]="{ 'is-invalid': submitted && f['nomeEmpresa'].errors }">
+    </div>
+    <div class="form__group">
+      <label class="form__label">Titulo da vaga</label>
+      <input type="text" class="form__input" placeholder="Titulo" formControlName="title"
+        [ngClass]="{ 'is-invalid': submitted && f['title'].errors }">
     </div>
     <div class="form__flex">
       <div class="form__group w-50">
-        <label class="form__label">Contacto</label>
-        <input type="tel" class="form__input" placeholder="+258 XXXXXXXXX">
+        <label class="form__label">Email</label>
+        <input type="email" class="form__input" placeholder="exemplo@email.com" formControlName="email"
+          [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
       </div>
       <div class="form__group w-50">
-        <label class="form__label">Email</label>
-        <input type="email" class="form__input" placeholder="exemplo@email.com">
+        <label class="form__label">Data de expiração</label>
+        <input type="date" class="form__input" placeholder="+258 XXXXXXXXX" formControlName="endDate"
+          [ngClass]="{ 'is-invalid': submitted && f['endDate'].errors }">
       </div>
     </div>
     <div class="form__group">
-      <label class="form__label">Curriculum</label>
-      <input type="file" accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf" class="form__input"
-        placeholder="Carregar curriculum">
+      <label class="form__label">Descrição</label>
+      <textarea class="form__input textarea" formControlName="description" placeholder="Descricao"
+        [ngClass]="{ 'is-invalid': submitted && f['description'].errors }"></textarea>
     </div>
-    <button class="btn btn--main btn--full">Enviar</button>
+    <div class="form__group">
+      <label class="form__label">Requisitos</label>
+      <textarea class="form__input textarea" formControlName="requisitos" placeholder="Requisitos"
+        [ngClass]="{ 'is-invalid': submitted && f['requisitos'].errors }"></textarea>
+    </div>
+    <div class="form__group">
+      <label class="form__label">Imagem</label>
+      <input type="file" accept="image/*" (change)="onFileChange($event)" class="form__input"
+        placeholder="Carregar Imagem">
+    </div>
+    <div class="container-prog">
+      <div class="progress-bar__container">
+        <div class="progress-bar" [style.left]="(100 - progress)">
+          <span class="progress-bar__text">Uploaded Successfully!</span>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn--main btn--full" (click)="onSubmit()">Enviar</button>
   </form>
 </div>

@@ -46,4 +46,15 @@ export class VagaService {
   cv(data: any) {
     return this.http.post(`${environment.api}/cv/createOrUpdate`, data);
   }
+
+  publicarVaga(data: any) {
+    return this.http.post(`${environment.api}/vagas/createForNormalUser`, data);
+  }
+
+  vagasImagem(formData: FormData): Observable<any> {
+    return this.http.post<any>(`${environment.api}/vagas/image`, formData, {
+      reportProgress: true,
+      observe: 'events',
+    });
+  }
 }

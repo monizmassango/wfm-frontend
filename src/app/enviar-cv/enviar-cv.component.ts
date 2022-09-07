@@ -49,11 +49,13 @@ export class EnviarCvComponent implements OnInit {
           'Por favor preencha todos os campos!',
           'Formulário invalido'
         );
+        this.submitted = false;
         return;
       }
 
       if (!this.file) {
         this.toastr.info('Carregue o seu CV!', 'Formulário invalido');
+        this.submitted = false;
         return;
       }
       this.cvForm.patchValue({
@@ -91,18 +93,3 @@ export class EnviarCvComponent implements OnInit {
     }
   }
 }
-
-// this.vagaService.cv(vagaCv).subscribe({
-//   next: () => {
-//     this.toastr.success(
-//       'Candidatura enviada com sucesso!',
-//       'Sucesso'
-//     );
-//     this.submitted = false;
-//     this.cvForm.reset();
-//   },
-//   error: () => {
-//     this.toastr.error('Candidatura não enviada!', 'Falha');
-//     this.submitted = false;
-//   },
-// });
