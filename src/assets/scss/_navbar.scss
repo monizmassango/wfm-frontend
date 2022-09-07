@@ -1,6 +1,12 @@
 .navbar {
   display: flex;
   font-size: 1.3rem;
+  position: fixed;
+  z-index: 1000;
+  background: white;
+  transform: translateX(-4rem);
+  width: 100vw;
+  padding: 2rem 4rem;
 
   @include respond(phone) {
     flex-direction: column;
