@@ -16,7 +16,9 @@ export class VagaService {
   }
 
   getAll(): Observable<Vaga[]> {
-    return this.http.get<Vaga[]>(`${environment.api}/vagas/findAll`);
+    return this.http.get<Vaga[]>(
+      `${environment.api}/vagas/findAllNotEndedApproved`
+    );
   }
 
   vagaCv(vagaCv: VagaCv) {
