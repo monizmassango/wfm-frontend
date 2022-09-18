@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   contactForm!: FormGroup;
   contacto!: Contacto;
   submitted = false;
+  loading = true;
 
   constructor(
     private servicosService: ServicosService,
@@ -29,9 +30,12 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.servicosService.findAll().subscribe((data) => console.log(data));
-    this.noticiaService
-      .findAll()
-      .subscribe({ next: (data) => (this.noticias = data) });
+    this.noticiaService.findAll().subscribe({
+      next: (data) => {
+        this.noticias = data;
+        this.loading = false;
+      },
+    });
 
     this.contactForm = this.fb.group({
       name: ['', Validators.required],

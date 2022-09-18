@@ -5,16 +5,18 @@ import { VagaService } from '../_service/vaga.service';
 @Component({
   selector: 'app-vagas',
   templateUrl: './vagas.component.html',
-  styleUrls: ['./vagas.component.scss']
+  styleUrls: ['./vagas.component.scss'],
 })
 export class VagasComponent implements OnInit {
+  vagas: Vaga[] = [];
+  loading = true;
 
-  vagas: Vaga[] =[]
-
-  constructor(private vagaService: VagaService) { }
+  constructor(private vagaService: VagaService) {}
 
   ngOnInit(): void {
-    this.vagaService.getAll().subscribe(data => this.vagas = data)
+    this.vagaService.getAll().subscribe((data) => {
+      this.vagas = data;
+      this.loading = false;
+    });
   }
-
 }

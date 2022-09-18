@@ -4,6 +4,10 @@
   padding-bottom: 0rem;
   margin-bottom: 8rem;
 
+  @include respond(tab-port) {
+    transform: translateX(-2rem);
+  }
+
   &__form {
     background-color: $color-white;
     color: $color-gray;
@@ -12,7 +16,7 @@
     width: 50vw;
 
     @include respond (tab-port) {
-      width: 94vw;
+      width: 96vw;
       padding: 2rem 1rem;
     }
 

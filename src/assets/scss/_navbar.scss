@@ -10,6 +10,8 @@
 
   @include respond(phone) {
     flex-direction: column;
+    width: 104vw;
+    padding: 2rem;
   }
 
   &__top {
@@ -18,10 +20,18 @@
     margin-top: 1rem;
     color: rgba($color-gray, 0.5);
 
+    @include respond(phone) {
+      justify-content: space-between;
+    }
+
     &--item {
       display: flex;
       align-items: center;
       margin-left: 5rem;
+
+      @include respond(phone) {
+        margin-left: 0;
+      }
 
       img {
         margin-right: 1rem;

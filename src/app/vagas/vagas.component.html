@@ -3,6 +3,13 @@
   <h2 class="title--2">Confira as oportunidades <br> de emprego</h2>
 
   <div class="cards">
+    <div class="card" *ngIf="loading">
+      <span class="card__top--right"></span>
+      <span class="card__top--left"></span>
+      <span class="card__bottom--right"></span>
+      <span class="card__bottom--left"></span>
+      <span class="loader"></span>
+    </div>
     <div class="card" *ngFor="let vaga of vagas" [routerLink]="['/vaga', vaga.id]">
       <span class="card__top--right"></span>
       <span class="card__top--left"></span>

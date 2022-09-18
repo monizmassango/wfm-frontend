@@ -12,6 +12,7 @@
   img {
     object-fit: cover;
     height: 100%;
+    max-width: 20rem;
 
     @include respond(tab-port) {
       width: 7rem;

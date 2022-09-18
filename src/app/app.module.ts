@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { SwiperModule } from 'swiper/angular'
+import { SwiperModule } from 'swiper/angular';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -33,7 +33,7 @@ import { NoticiasComponent } from './noticias/noticias.component';
     EnviarCvComponent,
     EnviarVagaComponent,
     NoticiaComponent,
-    NoticiasComponent
+    NoticiasComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,9 +42,9 @@ import { NoticiasComponent } from './noticias/noticias.component';
     HttpClientModule,
     SwiperModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

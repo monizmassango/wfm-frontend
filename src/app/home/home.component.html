@@ -2,7 +2,7 @@
 <div class="empresa">
   <img class="empresa__logo" src="assets/img/logo.png" alt="WFM" />
 
-  <div class="empresa__content">
+  <div class="empresa__content" data-aos="fade-up" data-aos-duration="3000">
     <h2 class="title--2">
       Saiba mais sobre a nossa <br />
       empresa
@@ -36,7 +36,7 @@
 </div>
 
 <div class="banner contacto">
-  <div class="banner__item">
+  <div class="banner__item" data-aos="fade-up" data-aos-duration="1000">
     <h2 class="title--3 underline">VAGAS - Deixe o seu CV</h2>
     <p>
       Caro/a candidato/a partilhe connosco o seu Curriculum Vitae para constar da nossa base de dados e confira as vagas
@@ -45,7 +45,7 @@
     <button class="btn btn--white" routerLink="/enviar-cv">Enviar CV</button>
   </div>
 
-  <div class="banner__item">
+  <div class="banner__item" data-aos="fade-up" data-aos-duration="2000">
     <h2 class="title--3 underline">Disponibilize a sua vaga</h2>
     <p>Prezado/a queira fazer uso da nossa página para divulgar a sua necessidade de pessoal. Por favor disponibilize
       abaixo a vaga de emprego, com todas especificações que pretende esclarecer aos candidatos.
@@ -62,7 +62,7 @@
   </h2>
 
   <div class="cards">
-    <div class="card">
+    <div class="card" data-aos="fade-right" data-aos-duration="1000">
       <span class="card__top--right"></span>
       <span class="card__top--left"></span>
       <span class="card__bottom--right"></span>
@@ -74,7 +74,7 @@
       <li>&blacksquare; Consolidação de contas</li>
     </div>
 
-    <div class="card">
+    <div class="card" data-aos="fade-down" data-aos-duration="2000">
       <span class="card__top--right"></span>
       <span class="card__top--left"></span>
       <span class="card__bottom--right"></span>
@@ -92,7 +92,7 @@
       <li>&blacksquare; Legalização de transferências de capitais</li>
     </div>
 
-    <div class="card">
+    <div class="card" data-aos="fade-left" data-aos-duration="1000">
       <span class="card__top--right"></span>
       <span class="card__top--left"></span>
       <span class="card__bottom--right"></span>
@@ -156,6 +156,13 @@
   </h2>
 
   <div class="cards">
+    <div class="card" *ngIf="loading">
+      <span class="card__top--right"></span>
+      <span class="card__top--left"></span>
+      <span class="card__bottom--right"></span>
+      <span class="card__bottom--left"></span>
+      <span class="loader"></span>
+    </div>
     <div class="card" [routerLink]="['/noticia', noticia.id]" *ngFor="let noticia of noticias | slice:0:3">
       <span class="card__top--right"></span>
       <span class="card__top--left"></span>
@@ -177,17 +184,16 @@
   <span class="title--mini">Parceiros</span>
   <h2 class="title--2">Nossos parceiros</h2>
   <div class="client">
-    <img class="client__item" src="assets/img/client1.png" />
-    <img class="client__item" src="assets/img/client2.png" />
-    <img class="client__item" src="assets/img/client3.png" />
-    <img class="client__item" src="assets/img/client4.png" />
-    <img class="client__item" src="assets/img/client5.png" />
+    <img class="client__item" src="assets/img/client1.jpg" />
+    <img class="client__item" src="assets/img/client2.jpg" />
+    <img class="client__item" src="assets/img/client3.jpg" />
+    <img class="client__item" src="assets/img/client4.jpg" />
   </div>
 </div>
 
 <div class="banner contact" id="contacto">
   <form class="contact__form" [formGroup]="contactForm">
-    <span class="title--mini">Contacto</span>u
+    <span class="title--mini">Contacto</span>
     <h2 class="title--2">Fale connosco</h2>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum provident
